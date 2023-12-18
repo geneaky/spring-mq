@@ -21,7 +21,6 @@ public class TransactionServiceV2 {
         //핵심 비지니스 로직
         
         //수취인 정보 검증
-        
         //거래 생성
         Transaction transaction = Transaction.builder()
             .exchangeRate(BigDecimal.valueOf(1328.12))
@@ -31,7 +30,14 @@ public class TransactionServiceV2 {
             .build();
         
         transactionManager.save(transaction);
-        
+
+/*
+        if(1==1) {
+            throw new RuntimeException("test");
+        }
+*/
+
+        //3개의 외부 api 호출을 1개로 묶어서 응답을 기대하지 않고 thread를 종료
         messagePublisher.publish(new TransactionCreatedTaskEvent("test@gmail.com", "01012341234", "test@channel", "송금 신청 완료"));
     }
 }
