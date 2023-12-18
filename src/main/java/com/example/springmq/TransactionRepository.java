@@ -1,4 +1,4 @@
-package com.example.springmq.legacy.transaction;
+package com.example.springmq;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

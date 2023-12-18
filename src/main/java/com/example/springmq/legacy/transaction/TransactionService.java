@@ -1,5 +1,7 @@
 package com.example.springmq.legacy.transaction;
 
+import com.example.springmq.Transaction;
+import com.example.springmq.TransactionRepository;
 import java.math.BigDecimal;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
